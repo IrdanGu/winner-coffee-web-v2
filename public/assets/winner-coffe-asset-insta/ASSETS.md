@@ -31,7 +31,7 @@ Kumpulan foto proses peracikan kopi, keahlian barista (*artisanal craft*), mesin
 | 4 | `barista-brewing-yellow-espresso-machine.jpg` | `SaveInta.com_655458379...` | Area bar warm glow | Ekstraksi espresso | Barista bertopi mengoperasikan tuas La Marzocco | Fokus ketelitian ekstraksi kopi | Hero Banner / Coffee Journey |
 | 5 | `barista-hands-holding-hot-latte-art.jpg` | `SaveInta.com_469729633...` | Bar kopi temaram | Hot latte / cappuccino | Dua tangan memegang cangkir latte art hangat | Menampilkan hasil kreasi latte art | Homepage Hero / Best Seller |
 | 6 | `barista-pouring-latte-art-coffee-bar.jpg` | `SaveInta.com_622849173...` | Bar kopi moody | Steamed milk & latte | Menuang susu dari pitcher membentuk pola latte art | Dedikasi seni peracikan barista | Coffee Craft / Story |
-| 7 | `hot-cappuccino-swan-latte-art-blue-cup.jpg` | `SaveInta.com_559746005...` | Meja kayu hangat | Hot cappuccino | Latte art motif swan di cangkir keramik biru | Still life kopi siap saji | Menu Card / Specialty Coffee |
+| 7 | `hot-cappuccino-swan-latte-art-blue-cup-clean.jpg` | `Gemini_Generated_Image_5rxjco5rxjco5rxj.jpg` (versi dibersihkan dan dipertajam) | Meja kayu hangat | Hot cappuccino | Latte art di cangkir keramik biru | Still life kopi siap saji | Homepage Favourites / Collection Card |
 | 8 | `barista-espresso-extraction-iced-coffee.jpg` | `SaveInta.com_669945531...` | Bar kopi artisan | Espresso & es kopi susu | Menuang shot espresso panas ke dalam es susu | Racikan kopi susu signature | Signature Drink / Menu Item |
 | 9 | `barista-counter-specialty-coffee-beans-night.jpg` | `SaveInta.com_657728344...` | Bar counter malam | Kemasan beans specialty | Barista menata beans "The Pink Mandarin" | Kurasi biji kopi pilihan | Beans Catalog / Roastery |
 | 10 | `cozy-warm-wooden-barista-counter.jpg` | `tempat-barista-warm-night.jpg` | Bar kayu panel LED | Display sirup & beans | Area bar *"Order Here"* siap operasional | Menyambut pengunjung kafe | Section The Bar / Location |
@@ -79,7 +79,7 @@ Kumpulan foto minuman dingin non-kopi, mocktail buah segar, paket sarapan pagi h
 | 34 | `signature-strawberry-milkshake-glass.jpg` | `SaveInta.com_653942105...` | Studio gelap terrazzo | Strawberry Milkshake buah | Minuman milkshake merah muda topping buah segar | Minuman signature manis segar | Menu / Signature Milkshake |
 | 35 | `beverage-signature-mocktail-dark-teaser.jpg` | `SaveInta.com_656189404...` | Studio gelap misterius | Mocktail oranye tuile & mint | Teaser menu minuman misterius (*???*) | Peluncuran produk minuman musiman | Promo Teaser / New Arrival |
 | 36 | `promo-lunch-chicken-rice-bowl-iced-lemon-tea.jpg` | `SaveInta.com_626958877...` | Balkon siang hari | Rice bowl ayam & Es Lemon Tea | Paket makan siang *"Winner's Lunchtime"* | Promo santap siang hemat kafe | Special Offers / Lunch Promo |
-| 37 | `hot-americano-ceramic-cup-morning-promo.jpg` | `SaveInta.com_654201753...` | Jendela pagi tenang | Hot Americano keramik | Promo ngopi pagi *"Pagi Ngopi 15K"* | Ritual kopi pagi sebelum kerja | Offers / Morning Ritual |
+| 37 | `hot-americano-ceramic-cup-morning-promo-clean.jpg` | `Gemini_Generated_Image_3tf12w3tf12w3tf1.jpg` (versi dibersihkan dari teks) | Jendela pagi tenang | Hot Americano keramik | Cangkir americano tanpa teks promo | Ritual kopi pagi sebelum kerja | Offers / Morning Ritual |
 | 38 | `promo-pagi-ngopi-hot-cappuccino-latte-art.jpg` | `SaveInta.com_656191834...` | Cahaya pagi meja kayu | Hot Cappuccino latte art | Poster promosi *"Pagi Ngopi Only 15K"* | Promo kopi pagi terjangkau | Promo / Daily Deals |
 | 39 | `morning-coffee-bundling-latte-americano-cheese-sticks.jpg` | `SaveInta.com_654562975...` | Nampan kayu pagi hari | Latte, Americano & Cheese Sticks | Paket bundling sarapan kopi dan pastry krispi | Sarapan hemat berpasangan/solo | Deals / Breakfast Bundles |
 
@@ -99,7 +99,7 @@ Kumpulan foto arsitektur gedung, fasad luar, rooftop kaca terbuka, teras balkon,
 | 45 | `aesthetic-arch-mirror-selfie-spot.jpg` | `SaveInta.com_654472661...` | Marmer & kisi kayu | Pantulan cermin kafe | Standing arch mirror berfasilitas Free WiFi | Spot foto selfie / OOTD pengunjung | Gallery / Aesthetic Spots |
 | 46 | `customers-mirror-selfie-aesthetic-restroom.jpg` | `SaveInta.com_650122170...` | Wastafel estetik tanaman | Area cermin LED | Dua sahabat mengambil foto mirror selfie | Kebersamaan santai pelanggan | Gallery / Customer Stories |
 | 47 | `cozy-corner-high-bar-stools-window-interior.jpg` | `SaveInta.com_658062847...` | Jendela malam temaram | Meja kayu & kursi bar tinggi | Tampilan sudut nyaman (*Find Your Cozy Corner*) | Sudut hening santai atau kerja | Ambience / Cozy Corners |
-| 48 | `winner-cafe-building-exterior-facade.jpg` | `SaveInta.com_655667755...` | Sudut jalan siang hari | Gedung 3 lantai putih-abu | Memperlihatkan tampak luar gedung & parkir | Navigasi lokasi fisik kafe | Location & Contact / Find Us |
+| 48 | `winner-cafe-building-exterior-enhanced.jpg` | `Gemini_Generated_Image_bar7gabar7gabar7 (1).jpg` (versi diperjelas) | Sudut jalan siang hari | Gedung 3 lantai putih-abu | Memperlihatkan tampak luar gedung dan area parkir tanpa teks promosi | Navigasi lokasi fisik kafe | Homepage / Featured House |
 | 49 | `winner-cafe-crew-kitchen-staff-aditya-portrait.jpg` | `SaveInta.com_513622727...` | Dapur stainless steel | Perlengkapan dapur | Staf dapur Aditya R berpose percaya diri | Perkenalan profil tim dapur kafe | About Us / Kitchen Crew |
 
 ---
@@ -125,7 +125,15 @@ Kumpulan foto aktivitas produktif bekerja/belajar dari kafe (*Work From Cafe*), 
 | 62 | `group-friends-gathering-neon-mural-photospot.jpg` | `SaveInta.com_657848162...` | Spot neon & dinding mural | Spot foto kafe | Komunitas berpose ceria di depan dinding mural | Foto kebersamaan grup yang seru | Gallery / Good Vibes |
 | 63 | `waiter-serving-food-ricebowl-noodles.jpg` | `SaveInta.com_655144328...` | Area makan malam ramai | Nampan rice bowl & mie kuah | Pramusaji mengantar pesanan makanan hangat | Layanan meja cepat dan ramah | Hospitality / Dining Service |
 | 64 | `busy-indoor-dining-staff-serving.jpg` | `SaveInta.com_670008483...` | Ruang indoor ramai | Rice bowls & es kopi | Pramusaji membawa baki melewati keramaian tamu | Suasana kafe yang hidup dan ramai | Social Proof / Lively Cafe |
-| 65 | `cafe-night-ambiance-cashier-customers.jpg` | `SaveInta.com_669731118...` | Kolase 3 sudut malam | Minuman es & kopi | Memesan di kasir dan mengobrol di meja | Dinamika interaksi malam kafe | Customer Experience / Vibe |
+| 65 | `cafe-night-ambiance-cashier-customers.jpg` | `SaveInta.com_669731118...` | Kolase 3 sudut malam | Minuman es & kopi | Memesan di kasir dan mengobrol di meja | Dinamika interaksi malam kafe | Customer Experience / Vibe (arsip aset, tidak dipakai saat ini) |
+
+### Aset tambahan
+
+| Nama File | Penggunaan |
+|---|---|
+| `sewa-karaoke.jpg` | Kartu ruang karaoke pada homepage |
+| `sewa-studio-music.jpg` | Kartu studio musik pada homepage |
+| `Gemini_Generated_Image_rd81lcrd81lcrd81.jpg` | Banner “Ruang kami.” pada homepage |
 
 ---
 

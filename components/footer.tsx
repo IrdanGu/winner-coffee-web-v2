@@ -1,18 +1,10 @@
-import Image from "next/image";
 import { MessageCircle, ArrowUpRight, Clock, MapPin } from "lucide-react";
 import cafeInfo from "../data/cafe-info.json" with { type: "json" };
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden px-5 py-12 text-[#F9F4EE]">
-      <Image
-        src="/assets/instagram/C50uWakSiBJ/C50uWakSiBJ-05.jpg"
-        alt=""
-        fill
-        sizes="100vw"
-        className="object-cover"
-      />
-      <div className="relative bg-black px-5 py-10 sm:px-8">
+    <footer className="bg-[#111111] px-5 py-12 text-[#F9F4EE]">
+      <div className="bg-[#111111] px-5 py-10 sm:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 pb-16 border-b border-[#262626]">
           {/* Brand & Manifesto: 4 cols */}
           <div className="lg:col-span-4 space-y-4">

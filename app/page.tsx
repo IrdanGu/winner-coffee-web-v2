@@ -10,6 +10,7 @@ import { HeroSlider, type HeroSlide } from "../components/home/hero-slider";
 import { HouseFavourites, type FavouriteTab } from "../components/home/house-favourites";
 
 const IG = "/assets/instagram";
+const CATALOG = "/assets/winner-coffe-asset-insta";
 // Keys describe what each photo shows (Instagram file names don't).
 // Clean shots (no baked-in promo text) go in the large hero/banner slots.
 const photo = {
@@ -29,6 +30,27 @@ const photo = {
   baristaBarNight: "/assets/suasana/tempat-barista-warm-night-clean.jpg",
   laptopNight: "/assets/suasana/girl-front-laptop-night.jpg",
   espressoGrind: "/assets/suasana/barista-grinding-coffee-clean.jpg",
+  karaokeRental: `${CATALOG}/sewa-karaoke.jpg`,
+  cappuccino: `${CATALOG}/hot-cappuccino-swan-latte-art-blue-cup-clean.jpg`,
+  americano: `${CATALOG}/hot-americano-ceramic-cup-morning-promo-clean.jpg`,
+  icedCoffee: `${CATALOG}/barista-espresso-extraction-iced-coffee.jpg`,
+  latteHands: `${CATALOG}/barista-hands-holding-hot-latte-art.jpg`,
+  bananaSmoothie: `${CATALOG}/banana-smoothie-creamy-cold-drink.jpg`,
+  strawberryMilkshake: `${CATALOG}/signature-strawberry-milkshake-glass.jpg`,
+  blackSunkist: `${CATALOG}/black-sunkist-iced-coffee-citrus-mocktail.jpg`,
+  chickenKatsu: `${CATALOG}/chicken-katsu-rice-bowl-salad-closeup.jpg`,
+  nasiCumi: `${CATALOG}/menu-nasi-cumi-sambal-ijo-crispy-egg.jpg`,
+  chickenSteak: `${CATALOG}/chicken-steak-potato-wedges-salad-plate.jpg`,
+  caramelToast: `${CATALOG}/caramel-toast-cream-strawberry-ice-cream-dessert.jpg`,
+  cheeseToast: `${CATALOG}/cheese-toast-thick-shredded-cheese-plate.jpg`,
+  pisangBakar: `${CATALOG}/pisang-bakar-grilled-banana-chocolate-cheese.jpg`,
+  dimsumPlatter: `${CATALOG}/dimsum-mix-platter-chili-oil.jpg`,
+  terrace: `${CATALOG}/modern-glasshouse-outdoor-terrace-seating.jpg`,
+  cafeNight: `${CATALOG}/winner-cafe-building-exterior-enhanced.jpg`,
+  lattePour: `${CATALOG}/barista-pouring-latte-art-coffee-bar.jpg`,
+  menuPromo: `${CATALOG}/eating-chicken-katsu-rice-bowl-hands.jpg`,
+  rooftop: `${CATALOG}/rooftop-terrace-glasshouse-hangout-space.jpg`,
+  roomBanner: `${CATALOG}/Gemini_Generated_Image_rd81lcrd81lcrd81.jpg`,
 };
 
 const heroSlides: HeroSlide[] = [
@@ -57,17 +79,17 @@ const heroSlides: HeroSlide[] = [
 
 // Category photo pools; cards rotate through them so the row stays varied.
 const categoryPhotos: Record<string, string[]> = {
-  coffee: [photo.pourOver, photo.icedLatte, photo.latteArt, photo.pickYourBrew],
-  "non-coffee": [photo.pickYourBrew, photo.terraceDuo],
-  "main-course": [photo.lunchtime, photo.tableTalk],
-  "pastry-snacks": [photo.barCounter, photo.terraceGroup],
+  coffee: [photo.americano, photo.icedCoffee, photo.latteHands],
+  "non-coffee": [photo.bananaSmoothie, photo.strawberryMilkshake, photo.blackSunkist],
+  "main-course": [photo.chickenKatsu, photo.nasiCumi, photo.chickenSteak],
+  "pastry-snacks": [photo.caramelToast, photo.cheeseToast, photo.pisangBakar, photo.dimsumPlatter],
 };
 
 const collectionPhotos: Record<string, string> = {
-  coffee: photo.icedLatte,
-  "non-coffee": photo.pickYourBrew,
-  "main-course": photo.lunchtime,
-  "pastry-snacks": photo.barCounter,
+  coffee: photo.cappuccino,
+  "non-coffee": photo.strawberryMilkshake,
+  "main-course": photo.chickenKatsu,
+  "pastry-snacks": photo.caramelToast,
 };
 
 function buildFavouriteTabs(): FavouriteTab[] {
@@ -93,8 +115,8 @@ function buildFavouriteTabs(): FavouriteTab[] {
 }
 
 const roomPhotos: Record<string, string> = {
-  karaoke: photo.karaoke,
-  "studio-musik": photo.melodyStairs,
+  karaoke: photo.karaokeRental,
+  "studio-musik": `${CATALOG}/sewa-studio-music.jpg`,
 };
 
 export default function HomePage() {
@@ -133,8 +155,8 @@ export default function HomePage() {
         <div className="mt-10 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_3fr_1fr]">
           <div className="relative hidden aspect-[4/5] lg:block">
             <Image
-              src={photo.cozyCorner}
-              alt="Sudut duduk Winner Coffee dengan kursi bar"
+              src={photo.terrace}
+              alt="Area duduk semi-outdoor Winner Coffee dengan kanopi kaca"
               fill
               sizes="30vw"
               className="object-cover"
@@ -198,19 +220,15 @@ export default function HomePage() {
       <section className="px-5 pt-20 md:pt-28" aria-labelledby="house-title">
         <div className="relative h-[clamp(480px,70vh,700px)] overflow-hidden bg-[#7E7975]">
           <Image
-            src={photo.terraceDuo}
-            alt="Dua pengunjung berbincang di teras lantai atas Winner Coffee pada malam hari"
+            src={photo.cafeNight}
+            alt="Fasad gedung Winner Coffee yang terlihat jelas dari sisi jalan"
             fill
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-l from-black/85 via-black/45 to-black/10" />
 
-          <div className="absolute bottom-5 left-5 hidden aspect-[4/5] w-[180px] overflow-hidden md:block">
-            <Image src={photo.barCounter} alt="" fill sizes="180px" className="object-cover" />
-          </div>
-
-          <div className="absolute bottom-5 right-5 w-[min(100%-40px,360px)] text-white">
+          <div className="absolute bottom-5 right-5 w-[min(100%-40px,380px)] bg-black/65 p-4 text-white shadow-[0_8px_30px_rgba(0,0,0,0.25)] backdrop-blur-[2px] md:p-5">
             <h2 id="house-title" className="font-serif text-xl font-medium tracking-[-0.02em]">
               Rumah kami.
             </h2>
@@ -283,7 +301,13 @@ export default function HomePage() {
 
       {/* 7. Full-bleed story banner — "Point of Origin" equivalent */}
       <section className="relative flex min-h-[560px] items-center justify-center overflow-hidden px-5 py-24 text-center text-[#F9F4EE]">
-        <Image src={photo.latteArt} alt="" fill sizes="100vw" className="object-cover" />
+        <Image
+          src={photo.lattePour}
+          alt="Barista menuangkan susu untuk membuat latte art di bar Winner Coffee"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative max-w-2xl">
           <h2 className="font-serif text-[40px] font-medium leading-none tracking-[-0.02em] md:text-[64px]">
@@ -306,8 +330,8 @@ export default function HomePage() {
       {/* 8. Half banners — "Our menu." / "Our story." */}
       <section className="grid grid-cols-1 gap-2.5 px-5 py-20 md:grid-cols-2 md:py-28">
         {[
-          { title: "Menu kami.", href: "/menu", src: photo.tableTalk, alt: "Tiga pengunjung menikmati minuman dan hidangan di meja kafe" },
-          { title: "Ruang kami.", href: "/booking", src: photo.terraceGroup, alt: "Pengunjung berkumpul di teras lantai atas Winner Coffee" },
+          { title: "Menu kami.", href: "/menu", src: photo.menuPromo, alt: "Line-up menu chicken steak dan nasi cumi Winner Coffee" },
+          { title: "Ruang kami.", href: "/booking", src: photo.roomBanner, alt: "Area ruang duduk semi-outdoor Winner Coffee dengan atap kaca" },
         ].map((banner) => (
           <Link
             key={banner.title}
@@ -321,7 +345,7 @@ export default function HomePage() {
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover motion-safe:transition-transform motion-safe:duration-700 group-hover:scale-[1.03]"
             />
-            <span className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-transparent" />
+            <span className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/25 to-transparent" />
             <span className="absolute left-5 top-3">
               <span className="block font-serif text-[36px] font-medium tracking-[-0.02em]">
                 {banner.title}
