@@ -1,0 +1,422 @@
+{
+  "categories": [
+    {
+      "id": "coffee",
+      "name": "Coffee",
+      "description": "Pilihan racikan espresso klasik dan racikan latte beraroma khas Winner Cafe.",
+      "iconName": "Coffee"
+    },
+    {
+      "id": "non-coffee",
+      "name": "Non-Coffee & Tea",
+      "description": "Pilihan teh buah segar, artisan tea, dan minuman pelepas dahaga.",
+      "iconName": "CupSoda"
+    },
+    {
+      "id": "main-course",
+      "name": "Main Course",
+      "description": "Menu hidangan utama mengenyangkan, dari olahan ayam, iga bakar, hingga nasi goreng.",
+      "iconName": "Utensils"
+    },
+    {
+      "id": "pastry-snacks",
+      "name": "Pastry & Snacks",
+      "description": "Croissant renyah, dessert manis, es krim, dan camilan gurih pendamping nongkrong.",
+      "iconName": "CakeSlice"
+    }
+  ],
+  "items": [
+    {
+      "id": "double-espresso",
+      "name": "Double Espresso",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 20000,
+      "description": "Ekstrak kopi murni ganda dengan crema tebal dan aroma pekat.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "americano",
+      "name": "Americano",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 23000,
+      "description": "Espresso dipadukan air panas menghasilkan seduhan kopi hitam yang bersih dan segar.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "cappucino",
+      "name": "Cappuccino",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 23000,
+      "description": "Kombinasi seimbang espresso, steamed milk, dan foam susu tebal.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "cafe-latte",
+      "name": "Cafe Latte",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 24000,
+      "description": "Espresso berpadu lembut dengan susu segar gurih dan lapisan microfoam tipis.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "affogato",
+      "name": "Affogato",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 25000,
+      "description": "Satu scoop es krim vanilla premium disiram shot espresso hangat.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "mochacino",
+      "name": "Mochaccino",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 28000,
+      "description": "Perpaduan harmonis espresso, cokelat pekat, dan susu lembut.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "piccolo",
+      "name": "Piccolo Latte",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 25000,
+      "description": "Ristretto shot dengan porsi susu kecil untuk rasa kopi yang lebih dominan.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "creme-brulee-coffee",
+      "name": "Creme Brulee Coffee",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 24000,
+      "description": "Kopi susu lembut dengan sentuhan karamel bakar renyah di atasnya.",
+      "isAvailable": true,
+      "isFavorite": true,
+      "isPromo": true
+    },
+    {
+      "id": "coffee-matcha-latte",
+      "name": "Coffee Matcha Latte",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 28000,
+      "description": "Layering unik antara matcha jepang aromatik, espresso, dan susu segar.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "caramel-latte",
+      "name": "Caramel Latte",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 26000,
+      "description": "Latte creamy berpadu sirup karamel manis alami.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "salted-caramel",
+      "name": "Salted Caramel Latte",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 26000,
+      "description": "Keseimbangan rasa manis gurih karamel dengan hint garam laut halus.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "macadamia-latte",
+      "name": "Macadamia Latte",
+      "categoryId": "coffee",
+      "categoryName": "Coffee",
+      "price": 26000,
+      "description": "Latte beraroma kacang macadamia panggang yang harum dan gurih.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "lychee-tea",
+      "name": "Lychee Tea",
+      "categoryId": "non-coffee",
+      "categoryName": "Non-Coffee & Tea",
+      "price": 20000,
+      "description": "Teh dingin segar dengan aroma dan buah leci manis asli.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "lemon-tea",
+      "name": "Lemon Tea",
+      "categoryId": "non-coffee",
+      "categoryName": "Non-Coffee & Tea",
+      "price": 17000,
+      "description": "Perasan lemon segar berpadu teh seduh dingin yang menyegarkan dahaga.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "peach-tea",
+      "name": "Peach Tea",
+      "categoryId": "non-coffee",
+      "categoryName": "Non-Coffee & Tea",
+      "price": 20000,
+      "description": "Seduhan teh wangi buah persik manis segar.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "thai-tea",
+      "name": "Thai Tea",
+      "categoryId": "non-coffee",
+      "categoryName": "Non-Coffee & Tea",
+      "price": 18000,
+      "description": "Teh khas Thailand otentik dengan susu kental manis dan rasa rempah lembut.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "strawberry-tea",
+      "name": "Strawberry Tea",
+      "categoryId": "non-coffee",
+      "categoryName": "Non-Coffee & Tea",
+      "price": 18000,
+      "description": "Teh aromatik rasa stroberi dengan rasa asam manis seimbang.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "regular-tea",
+      "name": "Regular Tea",
+      "categoryId": "non-coffee",
+      "categoryName": "Non-Coffee & Tea",
+      "price": 10000,
+      "description": "Teh melati seduh hangat atau dingin khas Nusantara.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "air-mineral",
+      "name": "Air Mineral",
+      "categoryId": "non-coffee",
+      "categoryName": "Non-Coffee & Tea",
+      "price": 6000,
+      "description": "Air mineral botol dingin atau suhu ruang.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "ayam-bakar-madu",
+      "name": "Ayam Bakar Madu",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 27000,
+      "description": "Ayam panggang dengan bumbu rempah madu manis gurih meresap sampai ke tulang.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "ayam-penyet-cabe-hijau",
+      "name": "Ayam Penyet Cabe Hijau",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 27000,
+      "description": "Ayam goreng renyah dipenyet dengan sambal ijo segar pedas mantap.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "ayam-goreng",
+      "name": "Ayam Goreng Klasik",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 25000,
+      "description": "Ayam goreng bumbu kuning tradisional dengan kremesan gurih.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "iga-bakar-madu",
+      "name": "Iga Bakar Madu",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 39000,
+      "description": "Potongan iga empuk dengan olesan glaze madu bakar aroma asap wangi.",
+      "isAvailable": true,
+      "isFavorite": true,
+      "isPromo": true
+    },
+    {
+      "id": "iga-empok-bakar",
+      "name": "Iga Empok Bakar",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 42000,
+      "description": "Olahan iga bakar khas bumbu empok istimewa super gurih dan lembut.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "nasi-goreng-seafood",
+      "name": "Nasi Goreng Seafood",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 28000,
+      "description": "Nasi goreng aroma wok dengan isian udang dan cumi segar plus kerupuk.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "nasi-goreng-ayam",
+      "name": "Nasi Goreng Ayam",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 23000,
+      "description": "Nasi goreng spesial dengan suwiran ayam gurih dan telur.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "chicken-katsu-rice-bowl",
+      "name": "Chicken Katsu Rice Bowl",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 30000,
+      "description": "Nasi putih hangat dengan topping fillet ayam katsu renyah dan saus lezat.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "beef-black-pepper-rice-bowl",
+      "name": "Beef Black Pepper Rice Bowl",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 35000,
+      "description": "Irisan daging sapi lembut dimasak saus lada hitam pedas manis khas kafe.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "karaage-rice-bowl",
+      "name": "Karaage Rice Bowl",
+      "categoryId": "main-course",
+      "categoryName": "Main Course",
+      "price": 30000,
+      "description": "Daging ayam goreng ala Jepang renyah di luar juicy di dalam di atas nasi hangat.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "creamy-strawberry-croissant",
+      "name": "Creamy Strawberry Croissant",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 25000,
+      "description": "Pastry croissant flaky dengan isian krim lembut dan topping stroberi segar.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "double-chocolate-croissant",
+      "name": "Double Chocolate Croissant",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 25000,
+      "description": "Croissant renyah berlapis dengan lelehan cokelat ganda berlimpah.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "almond-croissant",
+      "name": "Almond Croissant",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 25000,
+      "description": "Croissant panggang renyah beraroma butter dengan taburan kacang almond panggang.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "plain-butter-croissant",
+      "name": "Plain Butter Croissant",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 20000,
+      "description": "Croissant mentega klasik dengan tekstur renyah di luar dan lembut di dalam.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "cheesecake-original",
+      "name": "Original Cheesecake",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 30000,
+      "description": "Kue keju lembut meleleh di mulut dengan crust biskuit gurih.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "strawberry-cheesecake-brulee",
+      "name": "Strawberry Cheesecake Brulee",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 38000,
+      "description": "Cheesecake creamy bertabur selai stroberi dan gula karamel bakar renyah.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "churros-selection",
+      "name": "Churros with Topping",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 15000,
+      "description": "Churros renyah hangat disajikan dengan aneka pilihan topping manis (Chocolate, Cinnamon, Matcha).",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "karaage-fries",
+      "name": "Karaage & Fries",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 30000,
+      "description": "Platter kentang goreng renyah dipadu potongan ayam karaage gurih untuk ngemil bareng.",
+      "isAvailable": true,
+      "isFavorite": true
+    },
+    {
+      "id": "tempe-mendoan",
+      "name": "Tempe Mendoan Hangat",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 18000,
+      "description": "Tempe mendoan daun bawang khas disajikan hangat bersama sambal kecap rawit pedas.",
+      "isAvailable": true,
+      "isFavorite": false
+    },
+    {
+      "id": "tempura-ice-cream",
+      "name": "Tempura Ice Cream",
+      "categoryId": "pastry-snacks",
+      "categoryName": "Pastry & Snacks",
+      "price": 15000,
+      "description": "Es krim goreng dengan balutan kulit renyah hangat dan sensasi dingin di dalam.",
+      "isAvailable": true,
+      "isFavorite": false
+    }
+  ]
+}

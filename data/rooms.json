@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ruang-karaoke",
+    "name": "Ruang Karaoke",
+    "type": "karaoke",
+    "description": "Ruang karaoke privat ber-AC dengan kualitas audio jernih, pilihan lagu lengkap, dan tempat duduk yang nyaman untuk santai bersama teman.",
+    "minHours": 3,
+    "basePrice": 400000,
+    "extraHourPrice": 120000,
+    "capacity": "6 - 10 Orang",
+    "isAssumption": true,
+    "facilities": [
+      "Minimum sewa 3 jam (Rp400.000)",
+      "Smart TV & Sound System Premium",
+      "Wireless Microphone Berkualitas",
+      "Ruangan Privat, Sofa Nyaman & AC",
+      "Bisa pesan menu makanan & minuman kafe"
+    ]
+  },
+  {
+    "id": "studio-musik",
+    "name": "Studio Musik",
+    "type": "studio-musik",
+    "description": "Studio latihan musik kedap suara dengan instrumen lengkap untuk latihan band, rekaman santai, maupun jam session musisi.",
+    "minHours": 1,
+    "basePrice": 80000,
+    "extraHourPrice": 80000,
+    "capacity": "4 - 7 Orang",
+    "isAssumption": true,
+    "facilities": [
+      "Sewa fleksibel mulai dari 1 jam (Rp80.000/jam)",
+      "Drum set akustik terawat",
+      "Amplifier gitar elektrik & bass lengkap",
+      "Vocal microphone & monitor speaker",
+      "Akustik ruang berperedam suara optimal"
+    ]
+  }
+]

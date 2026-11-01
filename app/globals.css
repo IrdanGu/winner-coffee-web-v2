@@ -1,26 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F9F4EE;
+  --foreground: #111111;
+  --surface: #F4EFE6;
+  --surface-alt: #EFE8DD;
+  --accent-forest: #108474;
+  --hairline: #E5DFD7;
+  --hairline-dark: #262626;
+  --dark-bg: #111111;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-forest: var(--accent-forest);
+  --color-hairline: var(--hairline);
+  --font-serif: var(--font-newsreader), "Tiempos Headline", Georgia, serif;
+  --font-sans: var(--font-geist-sans), "Balto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  letter-spacing: -0.01em;
+}
+
+/* Hero slider progress line (WatchHouse-style link underline timer) */
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* WatchHouse subtle editorial selection */
+::selection {
+  background-color: #108474;
+  color: #F9F4EE;
 }

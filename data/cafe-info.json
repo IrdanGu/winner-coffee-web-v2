@@ -1,0 +1,18 @@
+{
+  "name": "Winner Coffee",
+  "tagline": "Kafe, Ruang Karaoke, & Studio Musik di Kuningan",
+  "description": "Tempat nongkrong nyaman untuk pelajar dan pekerja. Nikmati hidangan lezat, kopi berkualitas, serta fasilitas ruang karaoke privat dan studio musik lengkap.",
+  "address": "Perumahan Panorama Asri, Jl. Cendrawasih No.11, Purwawinangun, Kec. Kuningan, Kabupaten Kuningan, Jawa Barat 45512",
+  "phone": "6282240446408",
+  "whatsAppNumber": "6282240446408",
+  "mapsUrl": "https://maps.google.com/?q=Winner+Coffee+Kuningan+Perumahan+Panorama+Asri+Jl+Cendrawasih+No+11",
+  "hours": {
+    "regularDays": "Senin - Kamis",
+    "regularHours": "10.00 - 22.00 WIB",
+    "regularCloseHour": 22,
+    "weekendDays": "Jumat - Minggu",
+    "weekendHours": "10.00 - 23.00 WIB",
+    "weekendCloseHour": 23,
+    "openHour": 10
+  }
+}
