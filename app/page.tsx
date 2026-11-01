@@ -26,6 +26,9 @@ const photo = {
   lunchtime: `${IG}/winner-saved/DK_OEEBzVoo.jpg`,
   cozyCorner: `${IG}/winner-saved/DA8S2PlzhkH.jpg`,
   melodyStairs: `${IG}/winner-saved/C4xogqmynb-.jpg`,
+  baristaBarNight: "/assets/suasana/tempat-barista-warm-night-clean.jpg",
+  laptopNight: "/assets/suasana/girl-front-laptop-night.jpg",
+  espressoGrind: "/assets/suasana/barista-grinding-coffee-clean.jpg",
 };
 
 const heroSlides: HeroSlide[] = [
@@ -36,8 +39,8 @@ const heroSlides: HeroSlide[] = [
     external: true,
     caption: "Satu rumah untuk kopi, karaoke, dan studio musik di Kuningan.",
     images: [
-      { src: photo.lounge, alt: "Area sofa dekat tangga di dalam Winner Coffee" },
-      { src: photo.barCounter, alt: "Pengunjung duduk di meja bar menghadap jendela" },
+      { src: photo.baristaBarNight, alt: "Meja barista Winner Coffee dengan mesin espresso dan lampu hangat" },
+      { src: photo.laptopNight, alt: "Pengunjung bekerja dengan laptop di meja bar pada malam hari" },
     ],
   },
   {
@@ -47,7 +50,7 @@ const heroSlides: HeroSlide[] = [
     caption: "Espresso dan manual brew, diseduh barista kami setiap hari.",
     images: [
       { src: photo.pourOver, alt: "Barista menyeduh kopi manual brew di meja bar" },
-      { src: photo.terraceGroup, alt: "Pengunjung berkumpul di teras lantai atas pada malam hari" },
+      { src: photo.espressoGrind, alt: "Barista menggiling biji kopi ke portafilter espresso" },
     ],
   },
 ];

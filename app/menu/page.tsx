@@ -5,23 +5,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import menuData from "../../data/menu.json";
-import { formatRupiah } from "../../lib/format";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
-const itemMap = Object.fromEntries(menuData.items.map((i) => [i.id, i]));
+type Item = (typeof menuData.items)[number] & { isPromo?: boolean; isFavorite?: boolean };
+const itemMap: Record<string, Item> = Object.fromEntries(menuData.items.map((i) => [i.id, i]));
 
 type Group = { id: string; label: string; image: string; itemIds: string[] };
-type Tab = { id: string; label: string; groups: Group[] };
+type Tab = { id: string; label: string; subheading: string; groups: Group[] };
+
+const PHOTO = "/assets/menu-photos";
 
 const TABS: Tab[] = [
   {
     id: "drink",
     label: "Drink.",
+    subheading: "Kopi, teh, dan minuman segar lainnya.",
     groups: [
       {
         id: "coffee",
-        label: "Coffee.",
-        image: "/assets/menu-icons/coffee.png",
+        label: "Coffee",
+        image: `${PHOTO}/coffee.jpg`,
         itemIds: [
           "double-espresso",
           "americano",
@@ -39,21 +42,14 @@ const TABS: Tab[] = [
       },
       {
         id: "tea",
-        label: "Tea.",
-        image: "/assets/menu-icons/tea.png",
-        itemIds: [
-          "lychee-tea",
-          "lemon-tea",
-          "peach-tea",
-          "thai-tea",
-          "strawberry-tea",
-          "regular-tea",
-        ],
+        label: "Tea",
+        image: `${PHOTO}/tea.jpg`,
+        itemIds: ["lychee-tea", "lemon-tea", "peach-tea", "thai-tea", "strawberry-tea", "regular-tea"],
       },
       {
         id: "refresher",
-        label: "Refresher.",
-        image: "/assets/menu-icons/snacks.png",
+        label: "Refresher",
+        image: `${PHOTO}/refresher.jpg`,
         itemIds: ["air-mineral"],
       },
     ],
@@ -61,23 +57,24 @@ const TABS: Tab[] = [
   {
     id: "main-course",
     label: "Main Course.",
+    subheading: "Hidangan utama: ayam, iga, dan nasi.",
     groups: [
       {
         id: "chicken",
-        label: "Chicken.",
-        image: "/assets/menu-icons/main-course.png",
+        label: "Chicken",
+        image: `${PHOTO}/chicken.jpg`,
         itemIds: ["ayam-bakar-madu", "ayam-penyet-cabe-hijau", "ayam-goreng"],
       },
       {
         id: "ribs",
-        label: "Ribs.",
-        image: "/assets/menu-icons/spaghetti.png",
+        label: "Ribs",
+        image: `${PHOTO}/ribs.jpg`,
         itemIds: ["iga-bakar-madu", "iga-empok-bakar"],
       },
       {
         id: "rice-bowl",
-        label: "Rice Bowl.",
-        image: "/assets/menu-icons/rice-bowl.png",
+        label: "Rice + Bowls",
+        image: `${PHOTO}/rice-bowl.jpg`,
         itemIds: [
           "nasi-goreng-seafood",
           "nasi-goreng-ayam",
@@ -91,11 +88,12 @@ const TABS: Tab[] = [
   {
     id: "pastry-snacks",
     label: "Pastry & Snacks.",
+    subheading: "Croissant, dessert, dan camilan pendamping nongkrong.",
     groups: [
       {
         id: "pastry",
-        label: "Pastry.",
-        image: "/assets/menu-icons/pastry.png",
+        label: "Pastry",
+        image: `${PHOTO}/pastry.jpg`,
         itemIds: [
           "creamy-strawberry-croissant",
           "double-chocolate-croissant",
@@ -105,197 +103,181 @@ const TABS: Tab[] = [
       },
       {
         id: "dessert",
-        label: "Dessert.",
-        image: "/assets/menu-icons/dessert.png",
-        itemIds: [
-          "cheesecake-original",
-          "strawberry-cheesecake-brulee",
-          "tempura-ice-cream",
-        ],
+        label: "Dessert",
+        image: `${PHOTO}/dessert.jpg`,
+        itemIds: ["cheesecake-original", "strawberry-cheesecake-brulee", "tempura-ice-cream"],
       },
       {
         id: "snacks",
-        label: "Snacks & Bites.",
-        image: "/assets/menu-icons/snacks.png",
+        label: "Snacks + Bites",
+        image: `${PHOTO}/snacks.jpg`,
         itemIds: ["churros-selection", "karaage-fries", "tempe-mendoan"],
       },
     ],
   },
 ];
 
+// Matches the printed Winner menu: 23000 -> "23K"
+const formatPrice = (price: number) => `${price / 1000}K`;
+
 // ─── Page ──────────────────────────────────────────────────────────────────────
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState<string>("drink");
   const currentTab = TABS.find((t) => t.id === activeTab)!;
 
-  return (
-    <div className="flex flex-col">
+  const selectTab = (id: string) => {
+    setActiveTab(id);
+    document.getElementById("menu-content")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
-      {/* ── HERO ── */}
-      <section className="relative min-h-[320px] sm:min-h-[420px] overflow-hidden border-b border-[#E5DFD7]">
+  return (
+    <div className="flex flex-col px-5">
+      {/* ── PAGE HEADER: blurred background, title bottom-left, portrait card right ── */}
+      <section className="relative mt-0 h-[300px] overflow-hidden lg:h-[350px]">
         <Image
-          src="/assets/instagram/C50uWakSiBJ/C50uWakSiBJ-02.jpg"
-          alt="Winner Coffee — menu"
+          src={`${PHOTO}/hero-bg.jpg`}
+          alt=""
           fill
-          className="object-cover object-center"
           priority
           sizes="100vw"
+          className="scale-110 object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D0B09]/80 via-[#0D0B09]/30 to-[#0D0B09]/10" />
-        <div className="relative flex h-full min-h-[320px] sm:min-h-[420px] flex-col justify-end p-8 sm:p-16 text-[#F9F4EE]">
-          <div className="space-y-3">
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[#A0988E]">
-              Winner Coffee • Kuningan
-            </span>
-            <h1 className="font-serif text-4xl sm:text-6xl font-normal leading-[1.05] tracking-tight text-[#F9F4EE]">
+        <div className="absolute inset-0 bg-black/25" />
+        <div className="relative flex h-full items-end justify-between gap-6 p-5">
+          <div className="text-[#F9F4EE]">
+            <p className="text-[11px] uppercase tracking-[0.12em]">Menu</p>
+            <h1 className="mt-4 font-serif text-4xl font-medium leading-[1.1] tracking-tight lg:text-5xl">
               Plates and pours.
             </h1>
-            <p className="max-w-md text-sm leading-relaxed text-[#D2C9BE]">
-              Kopi pilihan, teh aromatik, hidangan utama, dan pastry segar —
-              disiapkan dengan penuh perhatian setiap hari.
-            </p>
+          </div>
+          <div className="relative hidden h-[280px] w-[216px] shrink-0 sm:block">
+            <Image
+              src={`${PHOTO}/hero-card.jpg`}
+              alt="Creamy Mango, minuman Winner Cafe"
+              fill
+              sizes="216px"
+              className="object-cover"
+            />
           </div>
         </div>
       </section>
 
-      {/* ── TAB NAV — WatchHouse "Drinks / Counter / Brunch" style ── */}
-      <nav
-        className="sticky top-[57px] z-40 bg-[#F9F4EE]/95 backdrop-blur-sm border-b border-[#E5DFD7]"
-        aria-label="Kategori menu"
-      >
-        <div className="mx-auto max-w-7xl px-4 sm:px-8">
-          <div className="flex items-stretch overflow-x-auto gap-0 scrollbar-none">
-            {TABS.map((tab) => {
-              const isActive = activeTab === tab.id;
-              return (
-                <button
-                  key={tab.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={isActive}
-                  onClick={() => setActiveTab(tab.id)}
-                  className={`shrink-0 px-6 sm:px-8 py-5 text-sm tracking-wide transition-all border-b-2 ${
-                    isActive
-                      ? "border-[#111111] text-[#111111] font-semibold"
-                      : "border-transparent text-[#766E65] hover:text-[#111111]"
+      {/* ── CATEGORY NAVIGATION: black strip, 4-up like Drinks/Rarities/Counter/Brunch ── */}
+      <nav aria-label="Kategori menu" className="mt-5 bg-[#000000] p-5">
+        <div role="tablist" className="grid grid-cols-1 gap-8 sm:grid-cols-3 sm:gap-12">
+          {TABS.map((tab) => {
+            const isActive = tab.id === activeTab;
+            return (
+              <button
+                key={tab.id}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-controls="menu-content"
+                onClick={() => selectTab(tab.id)}
+                className={`group flex flex-col text-left transition-colors ${
+                  isActive ? "text-[#F9F4EE]" : "text-[#F9F4EE]/45 hover:text-[#F9F4EE]/80"
+                }`}
+              >
+                <span className="font-serif text-[28px] font-medium leading-[1.1] tracking-tight">
+                  {tab.label}
+                </span>
+                <span className="mt-6 text-sm leading-snug sm:mt-12">{tab.subheading}</span>
+                <span
+                  className={`mt-3 flex items-center justify-between border-t pt-3 text-[11px] uppercase tracking-[0.12em] ${
+                    isActive ? "border-[#F9F4EE]" : "border-[#F9F4EE]/45"
                   }`}
                 >
-                  {tab.label}
-                </button>
-              );
-            })}
-          </div>
+                  Discover
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                </span>
+              </button>
+            );
+          })}
         </div>
       </nav>
 
-      {/* ── MENU CONTENT ── */}
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-8 py-12 sm:py-16 space-y-0">
+      {/* ── MENU SECTIONS: label + photo left, items with price right ── */}
+      <div id="menu-content" role="tabpanel" className="scroll-mt-24">
         {currentTab.groups.map((group, gIdx) => {
           const items = group.itemIds.map((id) => itemMap[id]).filter(Boolean);
+          const featured = gIdx === 0;
           return (
-            <div
+            <section
               key={group.id}
-              className={`${gIdx > 0 ? "border-t border-[#E5DFD7] pt-12 mt-12" : ""}`}
+              aria-labelledby={`group-${group.id}`}
+              className={featured ? "mt-14 bg-[#E1DCD6] px-5 py-6" : "mt-14"}
             >
-              {/* Sub-group header: image left, title right — WatchHouse style */}
-              <div className="grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-0 border border-[#E5DFD7] mb-0">
-                {/* Image */}
-                <div className="relative h-[180px] sm:h-auto overflow-hidden bg-[#F4EFE6]">
+              <div className="grid grid-cols-1 gap-y-7 border-t border-[#000000] pt-4 lg:grid-cols-12 lg:grid-rows-[auto_1fr] lg:gap-x-8">
+                <h2
+                  id={`group-${group.id}`}
+                  className="text-[11px] uppercase tracking-[0.12em] lg:col-span-6 lg:col-start-1 lg:row-start-1"
+                >
+                  {group.label}
+                </h2>
+
+                <ul className="lg:col-span-6 lg:col-start-7 lg:row-span-2 lg:row-start-1">
+                  {items.map((item, idx) => {
+                    const tag = item.isPromo ? "Promo" : item.isFavorite ? "Favorit" : null;
+                    return (
+                      <li
+                        key={item.id}
+                        className={`grid grid-cols-[1fr_auto_3.5rem] gap-x-6 gap-y-2 pb-8 ${
+                          idx > 0 ? "border-t border-[#000000] pt-2" : ""
+                        }`}
+                      >
+                        <p className="text-sm font-medium leading-[1.2]">{item.name}</p>
+                        <p className="text-sm font-light leading-[1.2] text-[#111111]">
+                          {tag && `○ ${tag}`}
+                        </p>
+                        <p className="text-right text-sm font-light leading-[1.2]">
+                          {formatPrice(item.price)}
+                        </p>
+                        {item.description && (
+                          <p className="col-span-2 max-w-xl text-sm font-light leading-[1.25]">
+                            {item.description}
+                          </p>
+                        )}
+                      </li>
+                    );
+                  })}
+                </ul>
+
+                <div className="relative aspect-[275/362] w-full max-w-[275px] lg:col-span-3 lg:col-start-1 lg:row-start-2 lg:self-end">
                   <Image
                     src={group.image}
-                    alt={group.label}
+                    alt={`${group.label} di Winner Cafe`}
                     fill
-                    className="object-cover object-center"
-                    sizes="(max-width: 640px) 100vw, 220px"
+                    sizes="275px"
+                    className="object-cover"
                   />
                 </div>
-                {/* Title block */}
-                <div className="flex flex-col justify-between border-t sm:border-t-0 sm:border-l border-[#E5DFD7] bg-[#F9F4EE] p-8 sm:p-10">
-                  <div>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-[#766E65] block mb-2">
-                      {currentTab.label.replace(".", "")}
-                    </span>
-                    <h2 className="font-serif text-3xl sm:text-4xl font-normal text-[#111111]">
-                      {group.label}
-                    </h2>
-                  </div>
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#A0988E] mt-4">
-                    {items.length} pilihan
-                  </p>
-                </div>
               </div>
-
-              {/* Item rows */}
-              <div className="border-x border-b border-[#E5DFD7]">
-                {items.map((item, idx) => (
-                  <div
-                    key={item.id}
-                    className={`group flex items-start justify-between gap-6 px-8 sm:px-10 py-6 bg-[#F9F4EE] transition-colors hover:bg-[#F4EFE6] ${
-                      idx > 0 ? "border-t border-[#E5DFD7]" : ""
-                    }`}
-                  >
-                    {/* Left: name + description */}
-                    <div className="flex-1 space-y-1">
-                      <div className="flex items-center gap-3 flex-wrap">
-                        <h3 className="font-serif text-lg font-normal text-[#111111] group-hover:text-[#108474] transition-colors">
-                          {item.name}.
-                        </h3>
-                        {item.isPromo && (
-                          <span className="font-mono text-[10px] uppercase tracking-widest text-[#B45309] border border-[#B45309]/30 px-1.5 py-0.5">
-                            Promo
-                          </span>
-                        )}
-                        {item.isFavorite && (
-                          <span className="font-mono text-[10px] uppercase tracking-widest text-[#108474] border border-[#108474]/30 px-1.5 py-0.5">
-                            Favorit
-                          </span>
-                        )}
-                      </div>
-                      {item.description && (
-                        <p className="text-xs leading-relaxed text-[#766E65] max-w-lg">
-                          {item.description}
-                        </p>
-                      )}
-                    </div>
-
-                    {/* Right: price */}
-                    <div className="shrink-0 text-right">
-                      <span className="font-serif text-base font-medium text-[#111111]">
-                        {formatRupiah(item.price)}
-                      </span>
-                      <p className="font-mono text-[10px] uppercase tracking-wider text-[#A0988E] mt-0.5">
-                        Kasir
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            </section>
           );
         })}
       </div>
 
-      {/* ── BOTTOM CTA ── */}
-      <div className="border-t border-[#E5DFD7] bg-[#F4EFE6]">
-        <div className="mx-auto max-w-7xl px-4 sm:px-8 py-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div className="space-y-1">
-            <h3 className="font-serif text-xl font-normal text-[#111111]">
-              Ingin berkunjung dan menyewa ruangan?
-            </h3>
-            <p className="text-xs text-[#665F55]">
-              Pesan ruang karaoke privat (minimal 3 jam) atau studio musik sekarang.
-            </p>
-          </div>
-          <Link
-            href="/booking"
-            className="inline-flex items-center gap-2 border border-[#111111] bg-[#111111] px-6 py-3 text-xs uppercase tracking-widest text-[#F9F4EE] hover:bg-transparent hover:text-[#111111] transition-all shrink-0"
-          >
-            <span>Pesan Ruangan</span>
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
-        </div>
-      </div>
+      <p className="mt-10 text-xs font-light text-[#665F55]">
+        ○ Favorit = pilihan favorit pelanggan. Harga dalam ribuan rupiah dan sudah termasuk PBJT.
+      </p>
 
+      {/* ── BOTTOM CTA ── */}
+      <div className="mt-14 mb-14 flex flex-col items-start justify-between gap-6 border-t border-[#000000] pt-6 sm:flex-row sm:items-center">
+        <div className="space-y-1">
+          <h3 className="font-serif text-2xl font-medium tracking-tight">Mau sekalian sewa ruangan?</h3>
+          <p className="text-sm font-light text-[#665F55]">
+            Ruang karaoke privat (minimal 3 jam) atau studio musik per jam.
+          </p>
+        </div>
+        <Link
+          href="/booking"
+          className="inline-flex shrink-0 items-center gap-2 border border-[#111111] bg-[#111111] px-6 py-3 text-[11px] uppercase tracking-[0.12em] text-[#F9F4EE] transition-colors hover:bg-transparent hover:text-[#111111]"
+        >
+          Pesan Ruangan
+          <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+        </Link>
+      </div>
     </div>
   );
 }

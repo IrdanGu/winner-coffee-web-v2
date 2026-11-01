@@ -27,6 +27,7 @@
 # playwright mcp snapshots
 /.playwright-mcp/
 /.firecrawl/
+/assets-src/menu-winner/
 
 # debug
 npm-debug.log*
