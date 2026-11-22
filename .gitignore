@@ -24,10 +24,8 @@
 .DS_Store
 *.pem
 
-# playwright mcp snapshots
-/.playwright-mcp/
-/.firecrawl/
-/assets-src/menu-winner/
+# raw archives
+/docs/archive/menu-scans/
 
 # debug
 npm-debug.log*

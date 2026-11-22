@@ -42,10 +42,10 @@ export function BookingConfirmationCard({
   };
 
   return (
-    <div className="border border-[#D9D2C7] bg-[#F4EFE6] p-8 sm:p-12 space-y-8">
+    <div className="border-y border-[#111111] py-8 sm:py-12 space-y-8">
       {/* Status Header */}
       <div className="space-y-3 border-b border-[#E5DFD7] pb-6">
-        <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-[#108474] font-semibold block">
+        <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-[#108474] font-semibold block">
           Status: Menunggu Konfirmasi Admin.
         </span>
         <h1 className="font-serif text-3xl sm:text-4xl font-normal text-[#111111]">
@@ -58,19 +58,19 @@ export function BookingConfirmationCard({
       </div>
 
       {/* Booking Code Callout */}
-      <div className="border border-[#111111] bg-[#F9F4EE] p-6 text-center space-y-2">
-        <span className="font-mono text-[10px] uppercase tracking-widest text-[#766E65] block">
+      <div className="border-y border-[#111111] py-6 text-center space-y-2">
+        <span className="font-sans text-[11px] uppercase tracking-[0.18em] text-[#766E65] font-medium block">
           Kode Referensi Booking
         </span>
         <div className="flex items-center justify-center gap-4">
-          <span className="font-mono text-3xl sm:text-4xl font-bold tracking-wider text-[#111111]">
+          <span className="font-sans text-3xl sm:text-4xl font-semibold tracking-wider tabular-nums text-[#111111]">
             {booking.code}
           </span>
           <button
             type="button"
             onClick={handleCopyCode}
             aria-label="Salin kode booking"
-            className="flex items-center gap-1.5 border border-[#111111] px-3 py-1.5 text-xs font-mono uppercase tracking-wider text-[#111111] hover:bg-[#111111] hover:text-[#F9F4EE] transition-colors"
+            className="flex items-center gap-1.5 border-y border-[#111111] px-3 py-1.5 text-xs font-sans uppercase tracking-[0.14em] font-medium text-[#111111] hover:opacity-60 transition-opacity"
           >
             {isCopied ? (
               <>
@@ -88,7 +88,7 @@ export function BookingConfirmationCard({
       </div>
 
       {/* Booking Details Summary */}
-      <div className="space-y-3 border border-[#E5DFD7] bg-[#F9F4EE] p-6 text-xs text-[#443F3A]">
+      <div className="space-y-3 border-y border-[#E5DFD7] py-6 text-xs text-[#443F3A]">
         <div className="flex justify-between border-b border-[#E5DFD7] pb-2.5">
           <span className="text-[#766E65]">Layanan:</span>
           <span className="font-medium text-[#111111]">
@@ -125,31 +125,33 @@ export function BookingConfirmationCard({
           href={waUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-full items-center justify-center gap-2 border border-[#111111] bg-[#111111] py-4 text-xs font-semibold uppercase tracking-widest text-[#F9F4EE] hover:bg-[#108474] hover:border-[#108474] transition-all"
+          className="flex w-full items-center justify-between border border-[#111111] bg-[#111111] px-6 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#F9F4EE] hover:bg-[#108474] hover:border-[#108474] transition-all"
         >
-          <MessageCircle className="h-4 w-4" />
-          <span>Kirim Konfirmasi ke WhatsApp Admin</span>
-          <ArrowUpRight className="h-3.5 w-3.5" />
+          <span className="flex items-center gap-2">
+            <MessageCircle className="h-4 w-4 text-[#108474]" />
+            <span>Kirim Konfirmasi ke WhatsApp Admin</span>
+          </span>
+          <ArrowUpRight className="h-4 w-4" />
         </a>
 
         {onReset && (
           <button
             type="button"
             onClick={onReset}
-            className="flex items-center justify-center gap-1.5 py-2 text-xs font-mono uppercase tracking-wider text-[#766E65] hover:text-[#111111]"
+            className="flex items-center justify-between border-y border-[#D9D2C7] py-2.5 text-xs font-sans uppercase tracking-[0.14em] font-medium text-[#766E65] hover:border-[#111111] hover:text-[#111111] transition-colors"
           >
-            <ArrowLeft className="h-3 w-3" />
             <span>Buat Pengajuan Booking Lain</span>
+            <ArrowLeft className="h-3.5 w-3.5" />
           </button>
         )}
 
         {showBackToFormButton && (
           <Link
             href="/booking"
-            className="flex items-center justify-center gap-1.5 py-2 text-xs font-mono uppercase tracking-wider text-[#766E65] hover:text-[#111111]"
+            className="flex items-center justify-between border-y border-[#D9D2C7] py-2.5 text-xs font-sans uppercase tracking-[0.14em] font-medium text-[#766E65] hover:border-[#111111] hover:text-[#111111] transition-colors"
           >
-            <ArrowLeft className="h-3 w-3" />
             <span>Kembali ke Form Booking</span>
+            <ArrowLeft className="h-3.5 w-3.5" />
           </Link>
         )}
       </div>

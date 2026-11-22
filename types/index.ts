@@ -15,25 +15,30 @@ export interface RoomInfo {
   facilities: string[];
 }
 
-export type MenuCategoryId = "coffee" | "non-coffee" | "main-course" | "pastry-snacks";
+export type MenuCategoryId = string;
 
 export interface MenuCategory {
-  id: MenuCategoryId;
+  id: string;
   name: string;
-  description: string;
+  description?: string;
   iconName: string;
+  sortOrder?: number;
 }
 
 export interface MenuItem {
   id: string;
   name: string;
-  categoryId: MenuCategoryId;
-  categoryName: string;
+  categoryId: string;
+  categoryName?: string;
   price: number;
   description?: string;
+  imageUrl?: string | null;
   isAvailable: boolean;
   isPromo?: boolean;
   isFavorite?: boolean;
+  badge?: string | null;
+  temperatureOptions?: string;
+  sortOrder?: number;
 }
 
 export interface CafeOperatingHours {

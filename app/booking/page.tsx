@@ -157,7 +157,7 @@ function BookingFormInner() {
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-8 sm:py-20">
       {/* Editorial Header */}
       <div className="mb-12 border-b border-[#E5DFD7] pb-8 space-y-3">
-        <span className="font-mono text-xs uppercase tracking-[0.25em] text-[#766E65] block">
+        <span className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#766E65] block">
           Layanan Reservasi
         </span>
         <h1 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-[#111111]">
@@ -174,11 +174,11 @@ function BookingFormInner() {
         <div className="lg:col-span-7">
           <form
             onSubmit={handleSubmit}
-            className="space-y-8 border border-[#D9D2C7] bg-[#F4EFE6] p-6 sm:p-10"
+            className="space-y-8 border-y border-[#111111] py-8 sm:py-10"
           >
             {/* Step 1: Select Room Type */}
             <div className="space-y-4">
-              <span className="block font-mono text-[11px] uppercase tracking-wider text-[#766E65]">
+              <span className="block font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-[#766E65]">
                 1. Pilih Jenis Layanan
               </span>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -192,8 +192,8 @@ function BookingFormInner() {
                       onClick={() => handleRoomChange(room.type as RoomType)}
                       className={`flex flex-col items-start gap-1.5 border p-5 text-left transition-all ${
                         isSelected
-                          ? "border-[#111111] bg-[#F9F4EE]"
-                          : "border-[#D9D2C7] bg-[#EFE8DD] hover:border-[#111111]"
+                          ? "border-[#111111] bg-[#111111] text-[#F9F4EE] shadow-sm"
+                          : "border-[#D9D2C7] bg-[#EFE8DD] text-[#111111] hover:border-[#111111]"
                       }`}
                     >
                       <div className="flex items-center gap-2">
@@ -210,16 +210,28 @@ function BookingFormInner() {
                             }`}
                           />
                         )}
-                        <span className="font-serif font-normal text-base text-[#111111]">
+                        <span
+                          className={`font-serif font-normal text-base ${
+                            isSelected ? "text-[#F9F4EE]" : "text-[#111111]"
+                          }`}
+                        >
                           {room.name}.
                         </span>
                       </div>
-                      <span className="text-xs font-mono text-[#111111]">
+                      <span
+                        className={`text-xs font-sans font-medium tabular-nums ${
+                          isSelected ? "text-[#D9D2C7]" : "text-[#111111]"
+                        }`}
+                      >
                         {isKaraoke
                           ? `Min. ${room.minHours} Jam • ${formatRupiah(room.basePrice)}`
                           : `Mulai 1 Jam • ${formatRupiah(room.basePrice)}/jam`}
                       </span>
-                      <span className="text-[10px] text-[#766E65]">
+                      <span
+                        className={`text-[10px] ${
+                          isSelected ? "text-[#A0988E]" : "text-[#766E65]"
+                        }`}
+                      >
                         Kapasitas {room.capacity}
                       </span>
                     </button>
@@ -230,14 +242,14 @@ function BookingFormInner() {
 
             {/* Step 2: Date and Time */}
             <div className="space-y-5 pt-6 border-t border-[#E5DFD7]">
-              <span className="block font-mono text-[11px] uppercase tracking-wider text-[#766E65]">
+              <span className="block font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-[#766E65]">
                 2. Jadwal Pemakaian
               </span>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {/* Date */}
                 <div>
-                  <label htmlFor="booking-date" className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-[#665F55]">
+                  <label htmlFor="booking-date" className="mb-1.5 block text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#665F55]">
                     Tanggal Booking
                   </label>
                   <input
@@ -246,7 +258,7 @@ function BookingFormInner() {
                     value={date}
                     onChange={(e) => setDate(e.target.value)}
                     min={getTodayDateString()}
-                    className="w-full border border-[#D9D2C7] bg-[#F9F4EE] px-3.5 py-2.5 text-xs text-[#111111] focus:border-[#111111] focus:outline-none"
+                    className="w-full border-y border-[#D9D2C7] bg-transparent py-2.5 px-1 text-xs text-[#111111] focus:border-[#111111] focus:outline-none rounded-none transition-colors"
                   />
                   {errors.date && (
                     <p className="mt-1 text-[11px] text-[#991B1B]">{errors.date}</p>
@@ -255,14 +267,14 @@ function BookingFormInner() {
 
                 {/* Start Time */}
                 <div>
-                  <label htmlFor="booking-time" className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-[#665F55]">
+                  <label htmlFor="booking-time" className="mb-1.5 block text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#665F55]">
                     Waktu Mulai
                   </label>
                   <select
                     id="booking-time"
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="w-full border border-[#D9D2C7] bg-[#F9F4EE] px-3.5 py-2.5 text-xs text-[#111111] focus:border-[#111111] focus:outline-none"
+                    className="w-full border-y border-[#D9D2C7] bg-transparent py-2.5 px-1 text-xs text-[#111111] focus:border-[#111111] focus:outline-none rounded-none transition-colors"
                   >
                     {timeSlots.map((slot) => (
                       <option key={slot} value={slot}>
@@ -280,14 +292,14 @@ function BookingFormInner() {
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 {/* Duration */}
                 <div>
-                  <label htmlFor="booking-duration" className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-[#665F55]">
+                  <label htmlFor="booking-duration" className="mb-1.5 block text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#665F55]">
                     Durasi Sewa
                   </label>
                   <select
                     id="booking-duration"
                     value={durationHours}
                     onChange={(e) => setDurationHours(Number(e.target.value))}
-                    className="w-full border border-[#D9D2C7] bg-[#F9F4EE] px-3.5 py-2.5 text-xs text-[#111111] focus:border-[#111111] focus:outline-none"
+                    className="w-full border-y border-[#D9D2C7] bg-transparent py-2.5 px-1 text-xs text-[#111111] focus:border-[#111111] focus:outline-none rounded-none transition-colors"
                   >
                     {durationOptions.map((opt) => (
                       <option key={opt.value} value={opt.value}>
@@ -302,7 +314,7 @@ function BookingFormInner() {
 
                 {/* Guest Count */}
                 <div>
-                  <label htmlFor="booking-guests" className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-[#665F55]">
+                  <label htmlFor="booking-guests" className="mb-1.5 block text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#665F55]">
                     Jumlah Tamu
                   </label>
                   <input
@@ -312,7 +324,7 @@ function BookingFormInner() {
                     max={25}
                     value={guestCount}
                     onChange={(e) => setGuestCount(Number(e.target.value))}
-                    className="w-full border border-[#D9D2C7] bg-[#F9F4EE] px-3.5 py-2.5 text-xs text-[#111111] focus:border-[#111111] focus:outline-none"
+                    className="w-full border-y border-[#D9D2C7] bg-transparent py-2.5 px-1 text-xs text-[#111111] focus:border-[#111111] focus:outline-none rounded-none transition-colors"
                   />
                   {errors.guestCount && (
                     <p className="mt-1 text-[11px] text-[#991B1B]">{errors.guestCount}</p>
@@ -323,12 +335,12 @@ function BookingFormInner() {
 
             {/* Step 3: Customer Details */}
             <div className="space-y-4 pt-6 border-t border-[#E5DFD7]">
-              <span className="block font-mono text-[11px] uppercase tracking-wider text-[#766E65]">
+              <span className="block font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-[#766E65]">
                 3. Data Pemesan
               </span>
 
               <div>
-                <label htmlFor="booking-customer-name" className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-[#665F55]">
+                <label htmlFor="booking-customer-name" className="mb-1.5 block text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#665F55]">
                   Nama Lengkap
                 </label>
                 <input
@@ -337,7 +349,7 @@ function BookingFormInner() {
                   placeholder="Nama pemesan..."
                   value={customerName}
                   onChange={(e) => setCustomerName(e.target.value)}
-                  className="w-full border border-[#D9D2C7] bg-[#F9F4EE] px-3.5 py-2.5 text-xs text-[#111111] focus:border-[#111111] focus:outline-none"
+                  className="w-full border-y border-[#D9D2C7] bg-transparent py-2.5 px-1 text-xs text-[#111111] focus:border-[#111111] focus:outline-none rounded-none transition-colors"
                 />
                 {errors.customerName && (
                   <p className="mt-1 text-[11px] text-[#991B1B]">{errors.customerName}</p>
@@ -345,7 +357,7 @@ function BookingFormInner() {
               </div>
 
               <div>
-                <label htmlFor="booking-customer-phone" className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-[#665F55]">
+                <label htmlFor="booking-customer-phone" className="mb-1.5 block text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#665F55]">
                   Nomor WhatsApp Aktif
                 </label>
                 <input
@@ -354,7 +366,7 @@ function BookingFormInner() {
                   placeholder="08xxxxxxxxxx"
                   value={customerPhone}
                   onChange={(e) => setCustomerPhone(e.target.value)}
-                  className="w-full border border-[#D9D2C7] bg-[#F9F4EE] px-3.5 py-2.5 text-xs text-[#111111] focus:border-[#111111] focus:outline-none"
+                  className="w-full border-y border-[#D9D2C7] bg-transparent py-2.5 px-1 text-xs text-[#111111] focus:border-[#111111] focus:outline-none rounded-none transition-colors"
                 />
                 {errors.customerPhone && (
                   <p className="mt-1 text-[11px] text-[#991B1B]">{errors.customerPhone}</p>
@@ -362,7 +374,7 @@ function BookingFormInner() {
               </div>
 
               <div>
-                <label htmlFor="booking-notes" className="mb-1.5 block text-xs font-mono uppercase tracking-wider text-[#665F55]">
+                <label htmlFor="booking-notes" className="mb-1.5 block text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#665F55]">
                   Catatan Khusus (Opsional)
                 </label>
                 <textarea
@@ -371,17 +383,17 @@ function BookingFormInner() {
                   placeholder="Permintaan tambahan, mic ekstra, atau perayaan..."
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full border border-[#D9D2C7] bg-[#F9F4EE] px-3.5 py-2 text-xs text-[#111111] focus:border-[#111111] focus:outline-none"
+                  className="w-full border-y border-[#D9D2C7] bg-transparent py-2.5 px-1 text-xs text-[#111111] focus:border-[#111111] focus:outline-none rounded-none resize-y transition-colors"
                 />
               </div>
             </div>
 
             <button
               type="submit"
-              className="flex w-full items-center justify-center gap-2 border border-[#111111] bg-[#111111] py-4 text-xs font-semibold uppercase tracking-widest text-[#F9F4EE] hover:bg-[#108474] hover:border-[#108474] transition-all"
+              className="mt-6 flex w-full items-center justify-between border border-[#111111] bg-[#111111] px-6 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-[#F9F4EE] hover:bg-[#108474] hover:border-[#108474] transition-all"
             >
               <span>Ajukan Booking & Dapatkan Kode</span>
-              <ArrowRight className="h-3.5 w-3.5" />
+              <ArrowRight className="h-4 w-4" />
             </button>
           </form>
         </div>
@@ -389,7 +401,7 @@ function BookingFormInner() {
         {/* Right Sidebar: 5 cols (Summary & Guidance) */}
         <div className="lg:col-span-5 space-y-8">
           {/* Real-time Calculation Card */}
-          <div className="border border-[#D9D2C7] bg-[#F4EFE6] p-6 sm:p-8 space-y-6">
+          <div className="border-y border-[#111111] py-8 sm:py-10 space-y-6">
             <h3 className="font-serif text-xl font-normal text-[#111111]">
               Ringkasan Estimasi Biaya.
             </h3>
@@ -433,7 +445,7 @@ function BookingFormInner() {
             </div>
 
             <div className="flex items-baseline justify-between pt-1">
-              <span className="text-xs font-mono uppercase tracking-wider text-[#766E65]">
+              <span className="text-xs font-sans font-medium uppercase tracking-[0.14em] text-[#766E65]">
                 Total Estimasi:
               </span>
               <span className="font-serif text-2xl font-medium text-[#111111]">
@@ -445,8 +457,8 @@ function BookingFormInner() {
           </div>
 
           {/* Quick Notice Card */}
-          <div className="border border-[#E5DFD7] bg-[#F9F4EE] p-6 space-y-4">
-            <h4 className="font-mono text-xs uppercase tracking-widest text-[#766E65]">
+          <div className="border-y border-[#D9D2C7] py-6 space-y-4">
+            <h4 className="font-sans text-[11px] font-semibold uppercase tracking-[0.18em] text-[#766E65]">
               Ketentuan Reservasi:
             </h4>
             <ul className="space-y-2 text-xs text-[#665F55] leading-relaxed">
@@ -466,11 +478,10 @@ function BookingFormInner() {
                 href={`https://wa.me/${cafeInfo.whatsAppNumber}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#108474] hover:underline"
+                className="flex items-center justify-between border border-[#111111] bg-[#111111] px-5 py-3 text-xs font-semibold uppercase tracking-[0.16em] text-[#F9F4EE] hover:bg-[#108474] hover:border-[#108474] transition-all"
               >
-                <MessageCircle className="h-3.5 w-3.5" />
                 <span>Ada pertanyaan? Hubungi Admin</span>
-                <ArrowUpRight className="h-3 w-3" />
+                <ArrowRight className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -484,7 +495,7 @@ export default function BookingPage() {
   return (
     <Suspense
       fallback={
-        <div className="py-24 text-center text-xs font-mono text-[#766E65]">
+        <div className="py-24 text-center text-xs font-sans uppercase tracking-[0.16em] text-[#766E65]">
           Memuat form reservasi ruangan...
         </div>
       }

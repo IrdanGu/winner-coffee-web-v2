@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Geist, Newsreader } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "../components/navbar";
-import { Footer } from "../components/footer";
+import { ConditionalShell } from "../components/conditional-shell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,10 +33,8 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col bg-[#F9F4EE] text-[#111111] font-sans antialiased selection:bg-[#108474] selection:text-white">
         <Suspense fallback={<div className="h-16 w-full bg-[#F9F4EE]" />}>
-          <Navbar />
+          <ConditionalShell>{children}</ConditionalShell>
         </Suspense>
-        <main className="flex-1">{children}</main>
-        <Footer />
       </body>
     </html>
   );

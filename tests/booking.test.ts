@@ -52,10 +52,20 @@ test("validateBookingInput: menolak durasi karaoke kurang dari 3 jam", () => {
   assert.ok(validation.errors.durationHours.includes("minimal 3 jam"));
 });
 
+// Helper to get next specific day of week (0: Sun, 4: Thu, 5: Fri)
+function getNextDayOfWeek(targetDay: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() + ((targetDay + 7 - d.getDay()) % 7 || 7));
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 test("validateBookingInput: menolak booking melewati jam operasional kafe", () => {
   const input: BookingInput = {
     roomType: "karaoke",
-    date: "2026-11-05", // Kamis, tutup jam 22.00
+    date: getNextDayOfWeek(4), // Hari Kamis, tutup jam 22.00
     startTime: "20:00",
     durationHours: 3, // Selesai jam 23.00 (melebihi jam 22.00)
     guestCount: 4,
@@ -70,7 +80,7 @@ test("validateBookingInput: menolak booking melewati jam operasional kafe", () =
 test("validateBookingInput: menyetujui booking yang valid", () => {
   const input: BookingInput = {
     roomType: "karaoke",
-    date: "2026-11-06", // Jumat, tutup jam 23.00
+    date: getNextDayOfWeek(5), // Hari Jumat, tutup jam 23.00
     startTime: "19:00",
     durationHours: 3, // Selesai jam 22.00
     guestCount: 5,

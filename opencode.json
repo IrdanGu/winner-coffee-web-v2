@@ -5,7 +5,18 @@
       "playwright": {
         "type": "local",
         "command": ["npx", "-y", "@playwright/mcp@latest"]
+      },
+      "supabase": {
+        "type": "local",
+        "command": ["npx", "-y", "@supabase/mcp-server-supabase@latest"]
       }
     }
-  }
+  },
+  "permissions": [
+    { "action": "skill", "resource": "guizang-ppt-skill", "effect": "deny" },
+    { "action": "skill", "resource": "octen-design", "effect": "deny" },
+    { "action": "skill", "resource": "lead-generation", "effect": "deny" },
+    { "action": "skill", "resource": "company-research", "effect": "deny" },
+    { "action": "skill", "resource": "vercel-react-native-skills", "effect": "deny" }
+  ]
 }

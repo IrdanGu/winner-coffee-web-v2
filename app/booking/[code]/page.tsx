@@ -38,7 +38,7 @@ function BookingDetailContent({
   if (loading) {
     return (
       <div className="mx-auto max-w-xl px-4 py-24 text-center">
-        <p className="font-mono text-xs text-[#766E65]">Memeriksa data reservasi...</p>
+        <p className="text-xs uppercase tracking-[0.16em] text-[#766E65]">Memeriksa data reservasi...</p>
       </div>
     );
   }
@@ -47,8 +47,8 @@ function BookingDetailContent({
   if (!booking) {
     return (
       <div className="mx-auto max-w-xl px-4 py-16 sm:px-8 sm:py-24">
-        <div className="border border-[#D9D2C7] bg-[#F4EFE6] p-8 sm:p-12 space-y-6 text-center">
-          <div className="mx-auto flex h-12 w-12 items-center justify-center border border-[#111111] bg-[#F9F4EE]">
+        <div className="border-y border-[#111111] py-12 space-y-6 text-center">
+          <div className="mx-auto flex h-12 w-12 items-center justify-center border-y border-[#111111]">
             <AlertCircle className="h-6 w-6 text-[#111111]" />
           </div>
           <div className="space-y-2">
@@ -56,7 +56,7 @@ function BookingDetailContent({
               Data Booking Tidak Ditemukan.
             </h1>
             <p className="text-xs text-[#665F55] max-w-sm mx-auto leading-relaxed">
-              Kode booking <span className="font-mono font-bold text-[#111111]">{code}</span> belum tercatat pada
+              Kode booking <span className="font-semibold tracking-wider tabular-nums text-[#111111]">{code}</span> belum tercatat pada
               perangkat ini atau sesi telah berakhir.
             </p>
           </div>
@@ -64,20 +64,22 @@ function BookingDetailContent({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/booking"
-              className="inline-flex items-center gap-2 border border-[#111111] bg-[#111111] px-5 py-2.5 text-xs uppercase tracking-widest text-[#F9F4EE] hover:bg-transparent hover:text-[#111111] transition-all"
+              className="flex w-full sm:w-auto items-center justify-between gap-3 border-y border-[#111111] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#111111] hover:opacity-60 transition-opacity"
             >
               <span>Buat Reservasi Baru</span>
-              <ArrowRight className="h-3 w-3" />
+              <ArrowRight className="h-3.5 w-3.5" />
             </Link>
             <a
               href={`https://wa.me/${cafeInfo.whatsAppNumber}?text=Halo%20Admin%20Winner%20Coffee,%20saya%20ingin%20cek%20kode%20booking%20${code}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 border border-[#D9D2C7] px-4 py-2.5 text-xs uppercase tracking-wider text-[#108474] hover:border-[#108474] transition-all"
+              className="flex w-full sm:w-auto items-center justify-between gap-3 border-y border-[#D9D2C7] px-4 py-3 text-xs font-medium uppercase tracking-[0.14em] text-[#111111] hover:border-[#111111] hover:opacity-60 transition-colors"
             >
-              <MessageCircle className="h-3.5 w-3.5" />
-              <span>Tanya Admin</span>
-              <ArrowUpRight className="h-3 w-3" />
+              <span className="flex items-center gap-1.5">
+                <MessageCircle className="h-3.5 w-3.5 text-[#108474]" />
+                <span>Tanya Admin</span>
+              </span>
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </a>
           </div>
         </div>
@@ -101,7 +103,7 @@ export default function BookingDetailPage({
     <Suspense
       fallback={
         <div className="mx-auto max-w-xl px-4 py-24 text-center">
-          <p className="font-mono text-xs text-[#766E65]">Memeriksa data reservasi...</p>
+          <p className="text-xs uppercase tracking-[0.16em] text-[#766E65]">Memeriksa data reservasi...</p>
         </div>
       }
     >

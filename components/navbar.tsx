@@ -56,9 +56,6 @@ export function Navbar() {
 
           {/* Utilities */}
           <div className="hidden items-center justify-end gap-8 text-sm font-medium md:flex">
-            <Link href="/booking" className="hover:opacity-60">
-              Pesan ruangan.
-            </Link>
             <a
               href="https://wa.me/6282240446408"
               target="_blank"

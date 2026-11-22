@@ -2,7 +2,7 @@
 
 Extracted from: [https://watchhouse.com/](https://watchhouse.com/)
 Captured via: Firecrawl CLI (`branding, markdown, images, full-page-screenshot`)
-Reference Asset: `.firecrawl/design-reference.png`
+Reference Asset: `docs/references/watchhouse/design-reference.png`
 Scrape ID: `01a19476-3b0a-74b2-840c-80cdaeb159ed`
 
 ---
@@ -37,7 +37,7 @@ WatchHouse manifests an **Architectural / Modernist Luxury Coffee House** aesthe
 | :--- | :--- | :--- | :--- |
 | **Headings & Editorial Titles** | Tiempos Headline (or *Newsreader* / *Playfair Display* / serif) | `font-serif` | High contrast, elegant tracking, sentence case with ending periods (`.`). |
 | **Body & Metadata** | Balto (or *Geist* / *Inter* / sans-serif) | `font-sans` | Crisp, high legibility, neutral geometric sans. |
-| **Subheadings & Badges** | Monospace or uppercase sans tracking | `tracking-widest uppercase text-xs` | Precise architectural labeling. |
+| **Subheadings, Badges & Numbers** | Geist Sans with Wide Tracking & Tabular Numbers | `font-sans font-medium uppercase tracking-[0.16em] tabular-nums` | WatchHouse 2-font discipline (eliminating monospace for clean, editorial micro-typography). |
 
 ### Geometry & Spacing
 

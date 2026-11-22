@@ -6,12 +6,12 @@ export function Footer() {
     <footer className="bg-[#111111] px-5 py-12 text-[#F9F4EE]">
       <div className="bg-[#111111] px-5 py-10 sm:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 pb-16 border-b border-[#262626]">
-          {/* Brand & Manifesto: 4 cols */}
-          <div className="lg:col-span-4 space-y-4">
+          {/* Brand & Manifesto: 7 cols */}
+          <div className="lg:col-span-7 space-y-4">
             <h2 className="font-serif text-2xl tracking-tight text-[#F9F4EE]">
               {cafeInfo.name}.
             </h2>
-            <p className="text-xs leading-relaxed text-[#A0988E] max-w-sm">
+            <p className="text-xs leading-relaxed text-[#A0988E] max-w-md">
               Tempat yang dirancang cermat untuk bersantai, nugas, dan berkumpul di Kuningan.
               Menyajikan kopi pilihan, sajian khas, ruang karaoke privat berstandar audio tinggi,
               serta studio musik akustik terawat.
@@ -30,10 +30,10 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Lokasi & Jam Operasional: 4 cols */}
-          <div className="lg:col-span-4 space-y-6">
+          {/* Lokasi & Jam Operasional: 5 cols */}
+          <div className="lg:col-span-5 space-y-6">
             <div>
-              <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#7E766D] mb-2 font-mono">
+              <div className="flex items-center gap-2 text-[11px] font-sans font-medium uppercase tracking-[0.18em] text-[#7E766D] mb-2">
                 <Clock className="h-3.5 w-3.5" />
                 <span>Jam Operasional.</span>
               </div>
@@ -50,7 +50,7 @@ export function Footer() {
             </div>
 
             <div>
-              <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-[#7E766D] mb-2 font-mono">
+              <div className="flex items-center gap-2 text-[11px] font-sans font-medium uppercase tracking-[0.18em] text-[#7E766D] mb-2">
                 <MapPin className="h-3.5 w-3.5" />
                 <span>Lokasi Kafe.</span>
               </div>
@@ -68,35 +68,23 @@ export function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Quick Notice & Guidelines: 4 cols */}
-          <div className="lg:col-span-4 space-y-4">
-            <span className="block text-xs uppercase tracking-widest text-[#7E766D] font-mono">
-              Ketentuan Reservasi.
-            </span>
-            <ul className="text-xs space-y-2 text-[#A0988E] leading-relaxed">
-              <li>
-                <strong className="text-[#F9F4EE]">Ruang Karaoke:</strong> Ketentuan minimum sewa 3 jam (Rp400.000).
-              </li>
-              <li>
-                <strong className="text-[#F9F4EE]">Studio Musik:</strong> Durasi fleksibel mulai 1 jam (Rp80.000/jam).
-              </li>
-              <li>
-                <strong className="text-[#F9F4EE]">Konfirmasi Admin:</strong> Reservasi belum final sebelum diverifikasi jadwalnya oleh Admin WhatsApp.
-              </li>
-              <li>
-                <strong className="text-[#F9F4EE]">Menu Kafe:</strong> Pemesanan makanan dan minuman dilayani langsung di kasir kafe.
-              </li>
-            </ul>
-          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#7E766D]">
           <p>© 2026 {cafeInfo.name}. All rights reserved.</p>
-          <p className="tracking-wide">
-            Considered Coffee, Karaoke & Music Studio • Kuningan, Jawa Barat
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="tracking-wide">
+              Considered Coffee, Karaoke & Music Studio • Kuningan, Jawa Barat
+            </p>
+            <span className="hidden sm:inline">•</span>
+            <a
+              href="/admin"
+              className="text-[#A0988E] hover:text-[#F9F4EE] transition-colors underline-offset-4 hover:underline"
+            >
+              Portal Pengelola
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -11,7 +11,7 @@ export function DisclaimerBadge({
 }: DisclaimerBadgeProps) {
   return (
     <div
-      className={`inline-flex items-start gap-2 border border-[#D9D2C7] bg-[#F4EFE6] px-3 py-2 text-[11px] leading-relaxed text-[#555048] ${className}`}
+      className={`flex items-start gap-2 border-y border-[#D9D2C7] py-2.5 text-[11px] leading-relaxed text-[#555048] ${className}`}
     >
       <Info className="h-3.5 w-3.5 shrink-0 text-[#108474] mt-0.5" />
       <span>{text}</span>
